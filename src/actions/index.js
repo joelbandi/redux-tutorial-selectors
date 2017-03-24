@@ -1,7 +1,7 @@
 import getData from '../data';
 export const SHOW_ALL_BOOKS = 'SHOW_ALL_BOOKS';
-export const GET_DONE_TRUE = 'GET_DONE_TRUE';
-export const GET_DONE_FALSE = 'GET_DONE_FALSE';
+export const SET_FILTER_TRUE = 'SET_FILTER_TRUE';
+export const SET_FILTER_FALSE = 'SET_FILTER_FALSE';
 
 export const showAllBooks = () => {
   return {
@@ -10,16 +10,14 @@ export const showAllBooks = () => {
   }
 }
 
-export const getDoneTrue = () => {
+export const setFilterTrue = () => {
   return {
-    type: GET_DONE_TRUE,
-    payload: getData()
+    type: SET_FILTER_TRUE
   }
 }
 
-export const getDoneFalse = () => {
+export const setFilterFalse = () => {
   return {
-    type: GET_DONE_FALSE,
-    payload: getData()
+    type: SET_FILTER_FALSE
   }
 }

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { showAllBooks, getDoneTrue, getDoneFalse } from '../actions'
+import { showAllBooks, setFilterFalse, setFilterTrue } from '../actions'
+
 
 
 class App extends Component {
 
   render() {
-    console.log(this.props);
+
     return (
       <div>
         <h1>React + Redux simple starter!!</h1>
@@ -20,27 +21,36 @@ class App extends Component {
         </ul> 
         <button onClick={this.props.showAllBooks}>all books</button>
         <hr/>
-        <button onClick={this.props.getDoneTrue}>done</button>
+        <button onClick={this.props.setFilterFalse}>not done</button>
         <hr/>
-        <button onClick={this.props.getDoneFalse}>not done</button>
+        <button onClick={this.props.setFilterTrue}>done</button>
       </div>
     );
   }
-
-
 }
+
+const getBooks = (books,filter) => {
+  if(filter === 'true') {
+    return books.filter((book) => book.done)
+  }else if(filter === 'false'){
+    return books.filter((book) => !book.done)
+  }
+  return books;
+}
+
 
 const mapStateToProps = (state) => {
   return {
-    books: state.books
+    books: getBooks(state.books,state.filter),
+    filter: state.filter
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({ 
     showAllBooks,
-    getDoneFalse,
-    getDoneTrue
+    setFilterFalse,
+    setFilterTrue
    },dispatch)
 }
 
