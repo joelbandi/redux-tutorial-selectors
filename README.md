@@ -1,25 +1,20 @@
 # ReduxSimpleStarter
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+Interested in learning [Redux](https://github.com/joelbandi/redux-counter)?
 
-###Getting Started###
 
-There are two methods for getting started with this repo.
 
 ####Familiar with Git?#####
 Checkout this repo, install dependencies, then start the gulp process with the following:
 
 ```
-	> git clone git@github.com:StephenGrider/ReduxSimpleStarter.git
+	> git clone git@github.com:joelbandi/redux-tutorial-selectors.git
 	> cd ReduxSimpleStarter
 	> npm install
 	> npm start
 ```
+###Getting Started###
 
-####Not Familiar with Git?#####
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
-
-```
-	> npm install
-	> npm start
-```
+1. Use `git checkout master` to checkout into master. Just go through the basic app src code.
+2. Use `git checkout reiteration-of-design` to checkout the next stepped branch. See how the app code was restructured to set up a need for selectors.
+3. Use `git checkout lets-try-reselect` to checkout into final branch. Read through the need for the selector how we already use a selector and but now were using better selectors to improve performance.
